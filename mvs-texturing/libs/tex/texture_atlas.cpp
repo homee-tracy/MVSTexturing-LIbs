@@ -10,8 +10,8 @@
 #include <map>
 #include <set>
 
-#include <mve/mve/image_io.h>
-#include <mve/mve/image_tools.h>
+#include <mve/image_io.h>
+#include <mve/image_tools.h>
 #include <mve/util/file_system.h>
 
 #include "texture_atlas.h"

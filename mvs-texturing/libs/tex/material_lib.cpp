@@ -10,8 +10,9 @@
 #include <cerrno>
 #include <cstring>
 #include <fstream>
+#include <iostream>
 
-#include <mve/mve/image_io.h>
+#include <mve/image_io.h>
 #include <mve/util/exception.h>
 #include <mve/util/file_system.h>
 
@@ -20,6 +21,7 @@
 void MaterialLib::save_to_files(std::string const& prefix) const {
   std::string filename = prefix + ".mtl";
   std::ofstream out(filename.c_str());
+  std::cout << "Saving material lib to " << filename << std::endl;
   if (!out.good())
     throw util::FileException(filename, std::strerror(errno));
 
@@ -28,15 +30,17 @@ void MaterialLib::save_to_files(std::string const& prefix) const {
   for (Material const& material : *this) {
     std::string diffuse_map_postfix = "_" + material.name + "_map_Kd.png";
     out << "newmtl " << material.name << '\n'
-        << "Ka 1.000000 1.000000 1.000000" << '\n'
-        << "Kd 1.000000 1.000000 1.000000" << '\n'
-        << "Ks 0.000000 0.000000 0.000000" << '\n'
-        << "Tr 0.000000" << '\n'  // *Tr*ansparancy vs. *d*issolve: Tr = 1.0 - d
-        << "illum 1" << '\n'
-        << "Ns 1.000000" << '\n'
+        << "Ka 0.2 0.2 0.2" << '\n'
+        << "Kd 0.8 0.8 0.8" << '\n'
+        << "Ks 1.0 1.0 1.0" << '\n'
+        << "d 1.0" << '\n'  // *Tr*ansparancy vs. *d*issolve: Tr = 1.0 - d
+        << "Ns 75.0" << '\n'
+        << "illum 2.0" << '\n'
         << "map_Kd " << name + diffuse_map_postfix << std::endl;
   }
   out.close();
+
+  std::cout << "Saving diffuse maps..." << std::endl;
 
   for (Material const& material : *this) {
     std::string filename = prefix + "_" + material.name + "_map_Kd.png";

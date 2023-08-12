@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.1)
 
-# LIST(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/elibs/tbb")
-
 project(Texturing)
 
 if(NOT CMAKE_BUILD_TYPE)
@@ -31,31 +29,20 @@ if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -funroll-loops")
 endif()
 
-# find_package(PNG REQUIRED)
-# find_package(JPEG REQUIRED)
-# find_package(TIFF REQUIRED)
-set(LIB_INCLUDE_DIR "../include")
-set(EIGEN_INCLUDE_DIR "../include/eigen3")
+set(LIB_INCLUDE_DIR "${CMAKE_INSTALL_PREFIX}/include")
+set(EIGEN_INCLUDE_DIR "${CMAKE_INSTALL_PREFIX}/include/eigen3")
+set(MVE_INCLUE_DIR "${CMAKE_INSTALL_PREFIX}/include/mve")
 
-# add_subdirectory(elibs)
+message(STATUS "LIB_INCLUDE_DIR: ${LIB_INCLUDE_DIR}")
+
 include_directories(SYSTEM
-    # ${CMAKE_SOURCE_DIR}/elibs/rayint/libs
-    # ${CMAKE_SOURCE_DIR}/elibs/mve/libs
+    ${MVE_INCLUE_DIR}
     ${LIB_INCLUDE_DIR}
     ${EIGEN_INCLUDE_DIR}
-    # ${CMAKE_SOURCE_DIR}/elibs/eigen
-    # ${CMAKE_SOURCE_DIR}/elibs/mapmap/
-    # ${CMAKE_SOURCE_DIR}/elibs/mapmap/mapmap
-    # ${CMAKE_SOURCE_DIR}/elibs/mapmap/ext/dset
 )
 
 include_directories(
     libs
 )
-
-# link_directories(
-#     ${CMAKE_SOURCE_DIR}/elibs/mve/mve
-#     ${CMAKE_SOURCE_DIR}/elibs/mve/util
-# )
 
 add_subdirectory(libs)

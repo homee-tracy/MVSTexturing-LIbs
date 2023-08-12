@@ -7,10 +7,10 @@
  * of the BSD 3-Clause license. See the LICENSE.txt file for details.
  */
 
-#include <mve/mve/bundle_io.h>
-#include <mve/mve/image_io.h>
-#include <mve/mve/image_tools.h>
-#include <mve/mve/scene.h>
+#include <mve/bundle_io.h>
+#include <mve/image_io.h>
+#include <mve/image_tools.h>
+#include <mve/scene.h>
 #include <mve/util/timer.h>
 #include <mve/util/tokenizer.h>
 

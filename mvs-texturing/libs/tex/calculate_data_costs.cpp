@@ -10,7 +10,7 @@
 #include <numeric>
 
 #include <mve/acc/bvh_tree.h>
-#include <mve/mve/image_color.h>
+#include <mve/image_color.h>
 #include <Eigen/Core>
 #include <Eigen/LU>
 

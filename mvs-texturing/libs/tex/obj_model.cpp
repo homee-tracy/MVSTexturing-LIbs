@@ -11,8 +11,9 @@
 #include <cstring>
 #include <fstream>
 #include <iomanip>
+#include <iostream>
 
-#include <mve/mve/mesh.h>
+#include <mve/mesh.h>
 #include <mve/util/exception.h>
 #include <mve/util/file_system.h>
 
@@ -25,9 +26,11 @@ void ObjModel::save(ObjModel const& model, std::string const& prefix) {
 }
 
 void ObjModel::save_to_files(std::string const& prefix) const {
+  std::cout << "Saving obj model to " << prefix << std::endl;
   material_lib.save_to_files(prefix);
 
   std::string name = util::fs::basename(prefix);
+  std::cout << "Name: " << name << std::endl;
   std::ofstream out((prefix + ".obj").c_str());
   if (!out.good())
     throw util::FileException(prefix + ".obj", std::strerror(errno));
@@ -36,8 +39,8 @@ void ObjModel::save_to_files(std::string const& prefix) const {
 
   out << std::fixed << std::setprecision(6);
   for (std::size_t i = 0; i < vertices.size(); ++i) {
-    out << "v " << vertices[i][0] << " " << vertices[i][1] << " "
-        << vertices[i][2] << '\n';
+    out << "v " << vertices[i][0] << " " << -vertices[i][1] << " "
+        << -vertices[i][2] << '\n';
   }
 
   for (std::size_t i = 0; i < texcoords.size(); ++i) {
@@ -45,8 +48,8 @@ void ObjModel::save_to_files(std::string const& prefix) const {
   }
 
   for (std::size_t i = 0; i < normals.size(); ++i) {
-    out << "vn " << normals[i][0] << " " << normals[i][1] << " "
-        << normals[i][2] << '\n';
+    out << "vn " << normals[i][0] << " " << -normals[i][1] << " "
+        << -normals[i][2] << '\n';
   }
 
   for (std::size_t i = 0; i < groups.size(); ++i) {

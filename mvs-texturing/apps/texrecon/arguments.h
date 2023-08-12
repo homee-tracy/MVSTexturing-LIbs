@@ -10,8 +10,8 @@
 #ifndef ARGUMENTS_HEADER
 #define ARGUMENTS_HEADER
 
-#include "mve/util/arguments.h"
 #include "tex/settings.h"
+#include "util/arguments.h"
 
 /** Struct containing the commandline arguments at runtime. */
 struct Arguments {

@@ -13,9 +13,9 @@
 #include <string>
 #include <vector>
 
+#include <mve/camera.h>
+#include <mve/image.h>
 #include <mve/math/vector.h>
-#include <mve/mve/camera.h>
-#include <mve/mve/image.h>
 
 #include "settings.h"
 #include "tri.h"

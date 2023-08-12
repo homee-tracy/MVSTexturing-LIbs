@@ -13,10 +13,10 @@
 #include <iostream>
 #include <vector>
 
-#include <mve/mve/mesh_io_ply.h>
-#include <mve/util/file_system.h>
-#include <mve/util/system.h>
-#include <mve/util/timer.h>
+#include <mve/mesh_io_ply.h>
+#include <util/file_system.h>
+#include <util/system.h>
+#include <util/timer.h>
 
 #include "tex/debug.h"
 #include "tex/progress_counter.h"

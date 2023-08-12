@@ -12,9 +12,9 @@
 
 #include <vector>
 
+#include <mve/image.h>
 #include <mve/math/vector.h>
-#include <mve/mve/image.h>
-#include <mve/mve/mesh.h>
+#include <mve/mesh.h>
 #include <mve/util/exception.h>
 
 #include "rectangular_bin.h"

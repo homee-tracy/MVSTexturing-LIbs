@@ -8,7 +8,7 @@
  */
 
 #include "arguments.h"
-#include "mve/util/file_system.h"
+#include "util/file_system.h"
 
 #define SKIP_GLOBAL_SEAM_LEVELING "skip_global_seam_leveling"
 #define SKIP_GEOMETRIC_VISIBILITY_TEST "skip_geometric_visibility_test"

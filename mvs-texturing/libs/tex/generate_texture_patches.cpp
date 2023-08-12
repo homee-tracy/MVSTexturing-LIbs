@@ -10,7 +10,7 @@
 #include <list>
 #include <set>
 
-#include <mve/mve/image_tools.h>
+#include <mve/image_tools.h>
 #include <mve/util/timer.h>
 #include <Eigen/SparseCore>
 #include <Eigen/SparseLU>

@@ -9,10 +9,10 @@
 
 #include <set>
 
+#include <mve/image_color.h>
+#include <mve/image_tools.h>
 #include <mve/math/functions.h>
-#include <mve/mve/image_color.h>
-#include <mve/mve/image_tools.h>
-#include <mve/mve/mesh_io_ply.h>
+#include <mve/mesh_io_ply.h>
 
 #include "texture_patch.h"
 

@@ -12,8 +12,8 @@
 
 #include <vector>
 
-#include "mve/mve/mesh.h"
-#include "mve/mve/mesh_info.h"
+#include "mve/mesh.h"
+#include "mve/mesh_info.h"
 
 #include "defines.h"
 #include "obj_model.h"

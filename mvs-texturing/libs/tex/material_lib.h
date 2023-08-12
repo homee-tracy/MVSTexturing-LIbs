@@ -10,7 +10,7 @@
 #ifndef TEX_MATERIALLIB_HEADER
 #define TEX_MATERIALLIB_HEADER
 
-#include <mve/mve/image.h>
+#include <mve/image.h>
 #include <vector>
 
 struct Material {

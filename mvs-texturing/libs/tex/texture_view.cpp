@@ -9,9 +9,9 @@
 
 #include <list>
 
+#include <mve/image_io.h>
+#include <mve/image_tools.h>
 #include <mve/math/matrix.h>
-#include <mve/mve/image_io.h>
-#include <mve/mve/image_tools.h>
 
 #include "texture_view.h"
 
