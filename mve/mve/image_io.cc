@@ -16,7 +16,7 @@
 #include <limits>
 
 #ifndef MVE_NO_PNG_SUPPORT
-#include <png.h>
+#include "../png_headers/png.h"
 #endif
 
 // #ifndef MVE_NO_JPEG_SUPPORT

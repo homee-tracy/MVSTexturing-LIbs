@@ -24,9 +24,9 @@ else()
 endif()
 
 # Point to the directory where libpng is installed or built
-set(PNG_LIBRARY /opt/homebrew/Cellar/libpng/1.6.40/lib)
-set(PNG_PNG_INCLUDE_DIR /opt/homebrew/Cellar/libpng/1.6.40/include)
-find_package(PNG REQUIRED)
+# set(PNG_LIBRARY /opt/homebrew/Cellar/libpng/1.6.40/lib)
+# set(PNG_PNG_INCLUDE_DIR /opt/homebrew/Cellar/libpng/1.6.40/include)
+# find_package(PNG REQUIRED)
 
 message(STATUS "CMAKE_SOURCE_DIR = ${CMAKE_SOURCE_DIR}")
 include_directories(${CMAKE_SOURCE_DIR}/math)
@@ -48,7 +48,7 @@ file(GLOB MVE_SOURCES
      "${CMAKE_SOURCE_DIR}/mve/[^_]*.cc")
 
 add_library(mve STATIC ${MVE_SOURCES} ${HEADERS})
-target_link_libraries(mve PRIVATE PNG::PNG)
+# target_link_libraries(mve PRIVATE PNG::PNG)
 
 install(TARGETS mve DESTINATION lib)
 
